@@ -2,7 +2,6 @@ import socket
 import ciphers
 
 substitutionCipher = ciphers.SubstitutionCipher()
-# transpositionCipher = ciphers.TranspositionCipher()
 
 HOST = '127.0.0.1'
 PORT =  6666
