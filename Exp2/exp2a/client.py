@@ -16,4 +16,4 @@ class Client:
 
 if __name__=="__main__":
     cipher = ciphers.SubstitutionCipher()
-    User = Client("",6666,cipher.encrypt("four",input("Enter message:")),cipher)
+    User = Client("",1234,cipher.encrypt("four",input("Enter message:")),cipher)

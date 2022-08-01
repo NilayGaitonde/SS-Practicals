@@ -28,8 +28,8 @@ class Interceptor:
                     print(f"Message: {data}")
                     data = cipher.encrypt("four",data)
                     print(f"Sent: {data}")
-            self.sendServer('127.0.0.1',6667,data)
-            self.sendUser('127.0.0.1',1234,data)
+                    break
+        self.sendServer('127.0.0.1',6666,data)
 
     def sendServer(self,host,port,message):
         print("Interceptor is sending data to the server...")
