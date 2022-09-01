@@ -1,18 +1,19 @@
 import math
-
+from pydoc import plain
 class SubstitutionCipher:
     def __init__(self):
         pass
     def encrypt(self,key,plainText):
-        print("Encrypting using substitution...")
         cipherText = ""
         for letter in plainText:
             cipherText=cipherText+chr(ord(letter)+len(key))
+        transpositionCipher = TranspositionCipher()
+        cipherText = transpositionCipher.encrypt("four",cipherText)
         return cipherText
-    
     def decrypt(self,key,cipherText):
-        print("Decrypting using substitution...")
         plainText = ""
+        transpositionCipher = TranspositionCipher()
+        cipherText = transpositionCipher.decrypt("four",cipherText)
         for letter in cipherText:
             plainText=plainText+chr(ord(letter)-len(key))
         return plainText
@@ -36,7 +37,6 @@ class TranspositionCipher:
         return cipherText
 
     def decrypt(self,key,cipherText):
-        plainText = ""
         ind = 0
         orderedKey = sorted(list(key))
         index=0
@@ -65,4 +65,9 @@ class TranspositionCipher:
     
         return cipherText
 if __name__=="__main__":
+    # substitutionCipher = TranspositionCipher()
+    substitutionCipher = SubstitutionCipher()
+    cipherText = substitutionCipher.encrypt("four","Hello world")
+    plainText = substitutionCipher.decrypt("four",cipherText)
+    print(plainText)
     pass
